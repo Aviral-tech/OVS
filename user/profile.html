@@ -10,8 +10,6 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
       integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
@@ -30,15 +28,14 @@
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/styles.css" />
-
+    <link rel="stylesheet" href="../css/styles.css" />
     <title>Online Voting System</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"
-          ><img src="images/OVStext.png" alt="" style="height: 5rem"
+          ><img src="../images/OVStext.png" alt="" style="height: 5rem"
         /></a>
         <button
           class="navbar-toggler"
@@ -84,8 +81,8 @@
             </a>
 
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="profile.html">Profile</a></li>
-
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#"></a></li>
               <li><hr class="dropdown-divider" /></li>
               <li>
                 <a class="dropdown-item" href="#">Logout</a>
@@ -96,52 +93,23 @@
       </div>
     </nav>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <form class="Login">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input
-                type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                placeholder="Exsiting email address"
-              />
-              <small id="emailHelp" class="form-text text-muted"
-                >We'll never share your email with anyone else.</small
-              >
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input
-                type="password"
-                class="form-control"
-                id="exampleInputPassword1"
-                placeholder="Exsiting password"
-              />
-            </div>
-          </form>
-        </div>
-        <div class="col-lg-6">
-          <div class="dropdown">
-            <button
-              class="btn btn-primary dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton1"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              What do you want update?
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">Phone number</a></li>
-              <li><a class="dropdown-item" href="#">Email address</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <div style="text-align: center">
+      <img
+        src="../images/img_avatar.png"
+        alt="Avatar"
+        style="
+          text-align: center;
+          border-radius: 50%;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 30%;
+        "
+      />
+      <h3 class="mt-4">Aviral Nagpal</h3>
+      <p>nagpalavi2001@gmail.com</p>
+      <h6 style="color: #1e5bfa">102018047</h6>
+      <h6 style="color: #1e5bfa">+91-7253070880</h6>
     </div>
   </body>
 </html>

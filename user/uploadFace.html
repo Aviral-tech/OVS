@@ -28,14 +28,15 @@
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/styles.css" />
+
     <title>Online Voting System</title>
   </head>
+
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"
-          ><img src="images/OVStext.png" alt="" style="height: 5rem"
+          ><img src="../images/OVStext.png" alt="" style="height: 5rem"
         /></a>
         <button
           class="navbar-toggler"
@@ -81,7 +82,7 @@
             </a>
 
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="profile.html">Profile</a></li>
               <li><a class="dropdown-item" href="#"></a></li>
               <li><hr class="dropdown-divider" /></li>
               <li>
@@ -93,23 +94,24 @@
       </div>
     </nav>
 
-    <div style="text-align: center">
-      <img
-        src="images/img_avatar.png"
-        alt="Avatar"
-        style="
-          text-align: center;
-          border-radius: 50%;
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-          width: 30%;
-        "
-      />
-      <h3 class="mt-4">Aviral Nagpal</h3>
-      <p>nagpalavi2001@gmail.com</p>
-      <h6 style="color: #1e5bfa">102018047</h6>
-      <h6 style="color: #1e5bfa">+91-7253070880</h6>
+    <div class="container">
+      <div class="row">
+        <div class="col col-lg-6 col-md-12">
+          <div class="Instructions" style="margin-top: 20%; margin-left: 15%">
+            <h2>Instructions for uploading face data</h2>
+            <ul class="">
+              <li>Ensure that you are sitting in well lit area</li>
+              <li>Try not to move during the process</li>
+              <li>Remove any obstacles that may block your face</li>
+              <li>Click on the <b>Start</b> button below to begin</li>
+              <button type="button" class="btn btn-primary mt-3">Start</button>
+            </ul>
+          </div>
+        </div>
+        <div class="col col-lg-6 col-md-12">
+          <img style="width: 70%" src="../images/faceAuth.jpg" alt="" />
+        </div>
+      </div>
     </div>
   </body>
 </html>
