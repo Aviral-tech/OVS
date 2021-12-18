@@ -72,57 +72,27 @@
         </div>
       </div>
     </nav>
-
-    <div style="margin: 3%">
-      <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">S.No.</th>
-            <th scope="col">Roll Number</th>
-            <th scope="col">Name</th>
-            <th scope="col">Image</th>
-            <th>Verification</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>102018047</td>
-            <td>Aviral</td>
-            <td>
-              <a href="../images/authentication.jpg">102018047</a>
-            </td>
-            <td>
-              <button><i class="fas fa-check-circle"></i></button>
-              <button><i class="fas fa-times-circle"></i></button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>102018047</td>
-            <td>Aviral</td>
-            <td>
-              <a href="../images/authentication.jpg">102018047</a>
-            </td>
-            <td>
-              <button><i class="fas fa-check-circle"></i></button>
-              <button><i class="fas fa-times-circle"></i></button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>102018047</td>
-            <td>Aviral</td>
-            <td>
-              <a href="../images/authentication.jpg">102018047</a>
-            </td>
-            <td>
-              <button><i class="fas fa-check-circle"></i></button>
-              <button><i class="fas fa-times-circle"></i></button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"><form form action="POST">
+        
+                <div class="mb-3">
+                  <label for="candidate_name" class="form-label">Candidate Name</label>
+                  <input type="text" class="form-control" id="candidate_name" aria-describedby="Name">
+                </div>
+                <div class="mb-3">
+                  <label for="candidate_desc" class="form-label">Description</label>
+                  <textarea class="form-control" id="candidate_desc" name="candidate_desc" rows="4" cols="50"></textarea>
+                </div>
+                <div class="mb-3">
+                    <input type="file" class="form-control" id="myFile" name="filename">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </form></div>
+        </div>
     </div>
+    
   </body>
 </html>
