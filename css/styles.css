@@ -1,6 +1,20 @@
 .btn {
   width: 100%;
 }
+.card {
+  width: 10%;
+  display: inline;
+}
+.card-body {
+  margin: auto 25%;
+  text-align: center !important;
+}
+.card-img-top {
+  width: 20%;
+}
+.card .card-body .btn {
+  width: 10rem;
+}
 .container {
   padding: 10% 10% 10% 10%;
 }
