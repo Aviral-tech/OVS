@@ -26,25 +26,36 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/styles.css')}}" />
     <title>Online Voting System</title>
   </head>
 
   <body>
-    <img src="../images/OVS.png" class="OVSlogo" />
+    {% with message = get_flashed_messages() %}
+      {% if message %}
+        {% for msg in message %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          {{msg}}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <img src="{{url_for('static', filename='images/OVS.png')}}" class="OVSlogo" />
     <div class="container">
       <div class="row">
         <div class="col col-lg-6 col-md-12">
-          <img class="voting-img" src="../images/authentication.jpg" alt="" />
+          <img class="voting-img" src="{{url_for('static', filename='images/authentication.jpg')}}" alt="" />
         </div>
         <div class="col col-lg-6 col-md-12">
           <h1 class="Sign-para">Sign In</h1>
           <p class="Sign-sub">Enter your credentials</p>
 
-          <form class="Login">
+          <form action="#" method="post" class="Login">
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
               <input
+                name = "login_email"
                 type="email"
                 class="form-control"
                 id="exampleInputEmail1"
@@ -58,14 +69,15 @@
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
               <input
+                name = "login_password"
                 type="password"
                 class="form-control"
                 id="exampleInputPassword1"
                 placeholder="Password"
               />
             </div>
-            <p style="text-align: right">Forgot password</p>
             <button type="submit" class="btn btn-primary mt-2">Login</button>
+            <p style="text-align: right"><a href="{{url_for('auth.registration')}}">Don't Have an account yet?</a></p>
           </form>
         </div>
       </div>

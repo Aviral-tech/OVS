@@ -28,14 +28,15 @@
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/styles.css')}}" />
 
     <title>Online Voting System</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"
-          ><img src="../images/OVStext.png" alt="" style="height: 5rem"
+        <a class="navbar-brand" href="{{url_for('auth.home')}}"
+          ><img src="{{url_for('static', filename='images/OVStext.png')}}" alt="" style="height: 5rem"
         /></a>
         <button
           class="navbar-toggler"
@@ -50,49 +51,32 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            {% if admin == "Admin" %}
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="home.html"
-                >Verify Voter</a
-              >
+              <a class="nav-link" href="{{url_for('admin.admin_landing')}}">Admin</a>
+            </li>
+            {% endif %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('views.profile')}}">Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/uploadFace.html"></a>
+              <a class="nav-link" href="{{url_for('views.uploadface')}}">Upload Face Data</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/uploadFace.html">Delete Voter</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Update Voter Details</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link disabled">Result</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('views.result')}}">Result</a>
+          </li>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('auth.logout')}}">Logout</a>
+          </li>
           </ul>
+          {% if status == "Verified" %}
+            <i class="far fa-check-circle fa-2x" style="color: green"></i>
+          {% else %}
+            <i class="far fa-times-circle fa-2x" style="color: red"></i>
+          {% endif %}
         </div>
       </div>
     </nav>
-    <div>
-        <div class="row">
-            <div class="col-lg-4"></div>
-            <div class="col-lg-4"><form form action="POST">
-        
-                <div class="mb-3">
-                  <label for="candidate_name" class="form-label">Candidate Name</label>
-                  <input type="text" class="form-control" id="candidate_name" aria-describedby="Name">
-                </div>
-                <div class="mb-3">
-                  <label for="candidate_desc" class="form-label">Description</label>
-                  <textarea class="form-control" id="candidate_desc" name="candidate_desc" rows="4" cols="50"></textarea>
-                </div>
-                <div class="mb-3">
-                    <input type="file" class="form-control" id="myFile" name="filename">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-        </form></div>
-        </div>
-    </div>
-    
   </body>
 </html>

@@ -51,12 +51,12 @@
           rel="stylesheet"
         />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-        <link rel="stylesheet" href="../css/styles.css" />
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/styles.css')}}" />
         <title>Online Voting System</title>
       </head>
 
       <body>
-        <img src="../images/OVS.png" class="OVSlogo" />
+        <img src="{{url_for('static', filename='images/OVS.png')}}" class="OVSlogo" />
         <div class="container mt-5" style="text-align: center">
           <div class="row">
             <div class="col-sm">
@@ -77,8 +77,8 @@
               </p>
             </div>
             <div class="col-sm" style="padding-top: 10%">
-              <button type="submit" class="btn btn-primary mt-2">Login</button>
-              <button type="submit" class="btn btn-primary mt-2">Signup</button>
+              <a href="{{ url_for('auth.login') }}"><button type="submit" class="btn btn-primary mt-2">Login</button></a>
+              <a href="{{ url_for('auth.registration') }}"><button type="submit" class="btn btn-primary mt-2">SignUp</button></a>
             </div>
           </div>
         </div>

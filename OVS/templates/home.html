@@ -28,70 +28,23 @@
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
-
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/styles.css')}}" />
     <title>Online Voting System</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"
-          ><img src="../images/OVStext.png" alt="" style="height: 5rem"
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="home.html"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/uploadFace.html">Upload Face Data</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Update Details</a>
-            </li>
+    
+    {% include 'header.html' %}
 
-            <li class="nav-item">
-              <a class="nav-link disabled">Result</a>
-            </li>
-          </ul>
-          <i class="far fa-check-circle fa-2x" style="color: green"></i>
-          <i class="far fa-times-circle fa-2x" style="color: red"></i>
-          <div class="nav-item dropdown" style="margin-right: 5%">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <i class="fas fa-user-circle fa-2x"></i>
-            </a>
-
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="profile.html">Profile</a></li>
-              <li><a class="dropdown-item" href="#"></a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li>
-                <a class="dropdown-item" href="#">Logout</a>
-              </li>
-            </ul>
-          </div>
+    {% with message = get_flashed_messages() %}
+      {% if message %}
+        {% for msg in message %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          {{msg}}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-      </div>
-    </nav>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
 
     <div class="container">
       <div class="row">
@@ -101,7 +54,7 @@
             <ul class="">
               <li>
                 Ensure that you have have uploaded your face data. If not then
-                you can <a href="uploadFace.html"> click here </a>
+                you can <a href="{{url_for('views.uploadface')}}"> click here </a>
               </li>
               <li>
                 Ensure that there is a green tick at the top right of your
@@ -116,14 +69,14 @@
                 for security reasons.
               </li>
               <li>Click on the <b>Start</b> button below to begin</li>
-              <button type="button" class="btn btn-primary mt-3">Start</button>
+              <a href="{{url_for('views.voting')}}"><button type="button" class="btn btn-primary mt-3">Start</button></a>
             </ul>
           </div>
         </div>
         <div class="col col-lg-6 col-md-12">
           <img
             style="width: 80%"
-            src="../images/Wavy_Tech-17_Single-04.jpg"
+            src="{{url_for('static', filename='images/Wavy_Tech-17_Single-04.jpg')}}"
             alt=""
           />
         </div>
