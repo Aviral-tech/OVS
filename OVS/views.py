@@ -37,4 +37,7 @@ def voting():
 @views.route("/result")
 @login_required
 def result():
-    return render_template("result.html")
+    status = current_user.status
+    admin = current_user.admin
+    return render_template("result.html",status=status, admin=admin)
+    
