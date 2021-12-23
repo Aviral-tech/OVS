@@ -28,33 +28,40 @@
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/styles.css')}}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static', filename='styles/styles.css')}}"
+    />
     <title>Online Voting System</title>
   </head>
   <body>
-    
-    {% include 'header.html' %}
+    {% include 'header.html' %} {% with message = get_flashed_messages() %} {%
+    if message %} {% for msg in message %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      {{msg}}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
 
-    {% with message = get_flashed_messages() %}
-      {% if message %}
-        {% for msg in message %}
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          {{msg}}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        {% endfor %}
-      {% endif %}
-    {% endwith %}
-
-    <div class="container">
+    <div class="instruction">
       <div class="row">
-        <div class="col col-lg-6 col-md-12">
-          <div class="Instructions" style="margin-top: 20%; margin-left: 15%">
+        <div class="col-lg-6 col-md-12">
+          <div
+            class="Instructions"
+            style="margin-top: 20%; margin-left: 15%; margin-right: 15%"
+          >
             <h2>Instructions for voting</h2>
             <ul class="">
               <li>
                 Ensure that you have have uploaded your face data. If not then
-                you can <a href="{{url_for('views.uploadface')}}"> click here </a>
+                you can
+                <a href="{{url_for('views.uploadface')}}"> click here </a>
               </li>
               <li>
                 Ensure that there is a green tick at the top right of your
@@ -69,11 +76,15 @@
                 for security reasons.
               </li>
               <li>Click on the <b>Start</b> button below to begin</li>
-              <a href="{{url_for('views.voting')}}"><button type="button" class="btn btn-primary mt-3">Start</button></a>
+              <a href="{{url_for('views.voting')}}"
+                ><button type="button" class="btn btn-primary mt-3">
+                  Start
+                </button></a
+              >
             </ul>
           </div>
         </div>
-        <div class="col col-lg-6 col-md-12">
+        <div class="col-lg-6 col-md-12">
           <img
             style="width: 80%"
             src="{{url_for('static', filename='images/Wavy_Tech-17_Single-04.jpg')}}"

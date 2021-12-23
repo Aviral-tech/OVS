@@ -28,19 +28,25 @@
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/styles.css')}}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static', filename='styles/styles.css')}}"
+    />
 
     <title>Online Voting System</title>
   </head>
 
   <body>
-    
     {% include 'header.html' %}
 
-    <div class="container">
+    <div class="instruction">
       <div class="row">
-        <div class="col col-lg-6 col-md-12">
-          <div class="Instructions" style="margin-top: 20%; margin-left: 15%">
+        <div class="col-lg-6 col-md-12">
+          <div
+            class="Instructions"
+            style="margin-top: 20%; margin-left: 15%; margin-right: 15%"
+          >
             <h2>Instructions for uploading face data</h2>
             <ul class="">
               <li>Ensure that you are sitting in well lit area</li>
@@ -51,8 +57,12 @@
             </ul>
           </div>
         </div>
-        <div class="col col-lg-6 col-md-12">
-          <img style="width: 70%" src="{{url_for('static', filename='images/faceAuth.jpg')}}" alt="" />
+        <div class="col-lg-6 col-md-12">
+          <img
+            style="width: 70%"
+            src="{{url_for('static', filename='images/faceAuth.jpg')}}"
+            alt=""
+          />
         </div>
       </div>
     </div>
