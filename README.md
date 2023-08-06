@@ -26,17 +26,25 @@ The Online Voting System is a project aimed at modernizing the traditional votin
 ### How to run the project
 Step 1: Clone the repository
 
-``` git clone https://github.com/Aviral-tech/OVS.git ```
+```
+ git clone https://github.com/Aviral-tech/OVS.git 
+```
 
 Step 2: Change current directory to the project directory.
   
-  ``` cd OVS ```
+  ```
+    cd OVS
+  ```
 
 Step 3: Install the required packages
 
-``` pip install -r requirement.txt ```
+``` 
+  pip install -r requirement.txt 
+```
 
 Step 4: Run the project
 
-``` python app.py ```
+```
+  python app.py
+```
 
